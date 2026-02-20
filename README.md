@@ -1,58 +1,79 @@
--setup
+# Symfony Full Setup - All Commands
+
+```bash
+# --------------------
+# Setup Project
+# --------------------
 symfony new testingapp --webapp
-composer require maker 
-symfony console make:controller dashboard
+composer require maker
+symfony console make:controller DashboardController
 
-
--security
+# --------------------
+# Security
+# --------------------
 composer require symfony/security-bundle
 symfony console security:hash-password
 
--migration
+# --------------------
+# Migration
+# --------------------
 symfony console make:migration
 
-
--doctrine
+# --------------------
+# Doctrine
+# --------------------
 symfony console doctrine:database:create
 symfony console doctrine:database:drop --force
-symfony console doctrine:fixtures:load --append (safe)
+symfony console doctrine:fixtures:load --append   # safe
 symfony console doctrine:fixtures:load
 symfony console doctrine:migrations:migrate
 symfony console make:crud
 
--forms
+# --------------------
+# Forms & Authentication
+# --------------------
 symfony console make:registration-form
 symfony console make:user
-symfony console make:auth 
+symfony console make:auth
 
--fixtures
+# --------------------
+# Fixtures
+# --------------------
 composer require --dev doctrine/doctrine-fixtures-bundle
 symfony console make:fixture AdminFixture
 
-
--docker 
+# --------------------
+# Docker
+# --------------------
 docker compose up -d
 docker compose down -v
 docker ps
 
--email
+# --------------------
+# Email Verification
+# --------------------
 composer require symfonycasts/verify-email-bundle
 
-
--cache 
+# --------------------
+# Cache
+# --------------------
 symfony console cache:clear
 
-
-
--api
+# --------------------
+# API Setup
+# --------------------
 composer require api symfony/orm-pack doctrine/doctrine-migrations-bundle
 composer require symfony/maker-bundle --dev
 composer require api
 
--jwt
+# --------------------
+# JWT Authentication
+# --------------------
 composer require lexik/jwt-authentication-bundle
 symfony console lexik:jwt:generate-keypair
 
--Oauthbundle 
+# --------------------
+# OAuth Bundle
+# --------------------
 composer require knpuniversity/oauth2-client-bundle
 composer require league/oauth2-google
