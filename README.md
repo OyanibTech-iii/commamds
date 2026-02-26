@@ -70,6 +70,7 @@ composer require api
 # JWT Authentication
 # --------------------
 composer require lexik/jwt-authentication-bundle
+$env:OPENSSL_CONF="C:\Program Files\Git\usr\ssl\openssl.cnf"  
 symfony console lexik:jwt:generate-keypair
 
 # --------------------
