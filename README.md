@@ -1,4 +1,4 @@
-```symfony
+
 # Symfony Full Setup - All Commands
 
 ```bash
