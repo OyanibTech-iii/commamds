@@ -1,3 +1,4 @@
+```symfony
 # Symfony Full Setup - All Commands
 
 ```bash
@@ -79,4 +80,5 @@ symfony console lexik:jwt:generate-keypair
 composer require knpuniversity/oauth2-client-bundle
 composer require league/oauth2-google
 # --------------------
+```
 
