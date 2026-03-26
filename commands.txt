@@ -51,8 +51,52 @@ composer require api
 
 -jwt
 composer require lexik/jwt-authentication-bundle
+$env:OPENSSL_CONF="C:\Program Files\Git\usr\ssl\openssl.cnf"  
 symfony console lexik:jwt:generate-keypair
+
+-issue fix
+composer require lexik/jwt-authentication-bundle
+test-Path "C:\Program Files\Git\usr\ssl\openssl.cnf" = if true okay
+$env:OPENSSL_CONF="C:\Program Files\Git\usr\ssl\openssl.cnf"  
+symfony console lexik:jwt:generate-keypair
+
+C:\xampp\php\php.ini
+;extension=sodium
+
+Oauthbundle 
+composer require knpuniversity/oauth2-client-bundle
+composer require league/oauth2-google
+
+-mailer
+composer require symfony/mailer
+php bin/console messenger:consume
+
 
 -Oauthbundle 
 composer require knpuniversity/oauth2-client-bundle
 composer require league/oauth2-google
+
+-NOTIFIER
+composer require symfony/mercure-bundle symfony/notifier symfony/ux-notify
+php bin/console messenger:setup-transports
+php bin/console messenger:consume async -vv
+
+-desktop notif
+composer require symfony/joli-notif-notifier
+
+
+-alpinejs
+npm install alpinejs @alpinejs/intersect
+npm run watch
+
+-tag
+git tag -a v1.0.0 -m "Release version 1.0.0"
+git push origin v1.0.0
+
+
+debug
+cd "c:\Users\pacif\Desktop\nonsense repo" && npm run build
+
+-truncate table
+php bin/console doctrine:query:sql "TRUNCATE TABLE chat_log"
+php bin/console doctrine:query:sql "TRUNCATE TABLE bot_knowledge"
